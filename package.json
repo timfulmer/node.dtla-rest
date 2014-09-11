@@ -1,0 +1,28 @@
+{
+    "name": "node.dtla-rest",
+    "version": "0.0.0",
+    "description": "Simple demo REST app.",
+    "main": "app.js",
+    "scripts": {
+        "test": "mocha test",
+        "start": "node app"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/timfulmer/node.dtla-rest.git"
+    },
+    "keywords": [
+        "restify",
+        "promises",
+        "node.dtla"
+    ],
+    "author": "Tim Fulmer",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/timfulmer/node.dtla-rest/issues"
+    },
+    "homepage": "https://github.com/timfulmer/node.dtla-rest",
+    "dependencies": {
+        "restify": "^2.8.2"
+    }
+}
