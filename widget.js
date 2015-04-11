@@ -56,8 +56,8 @@ function updateWidget(req,res,next) {
 
 function deleteWidget(req,res,next) {
     var filterId= req.params.id;
-    function filterById(el){
-        return el.id!=filterId;
+    function filterById(widget){
+        return widget.id!=filterId;
     }
     widgets= widgets.filter(filterById);
     delete widgetMap[filterId];
@@ -66,9 +66,9 @@ function deleteWidget(req,res,next) {
 }
 
 function route(server){
-    server.get('/widget',getWidgets);
+    server.get('/widgets',getWidgets);
     server.get('/widget/:id',getWidget);
-    server.post('/widget',createWidget);
+    server.post('/widgets',createWidget);
     server.del('/widget/:id',deleteWidget);
     server.put('/widget/:id',updateWidget);
 }

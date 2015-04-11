@@ -71,8 +71,8 @@ function updateGadget(req,res,next) {
 
 function deleteGadget(req,res,next) {
     var filterId= req.params.id;
-    function filterById(el){
-        return el.id!=filterId;
+    function filterById(gadget){
+        return gadget.id!=filterId;
     }
     gadgets= gadgets.filter(filterById);
     delete gadgetMap[filterId];
@@ -81,9 +81,9 @@ function deleteGadget(req,res,next) {
 }
 
 function route(server){
-    server.get({name: 'getGadgets', path: '/gadget'},getGadgets);
+    server.get({name: 'getGadgets', path: '/gadgets'},getGadgets);
     server.get({name: 'getGadget', path: '/gadget/:id'},getGadget);
-    server.post({name: 'createGadget', path: '/gadget'},createGadget);
+    server.post({name: 'createGadget', path: '/gadgets'},createGadget);
     server.del({name: 'deleteGadget', path: '/gadget/:id'},deleteGadget);
     server.put({name: 'updateGadget', path: '/gadget/:id'},updateGadget);
 }
